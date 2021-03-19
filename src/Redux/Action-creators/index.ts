@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from "axios";
 import { ActionTypes } from "../ActionTypes/index";
 import { Action } from "../Actions/index";
@@ -7,6 +6,7 @@ import { Dispatch } from "redux";
 const URL = `https://registry.npmjs.com/-/v1/search`;
 
 export const searchRepositories = (term: string) => {
+  // Annotate dispatch with Action type to get proper typings in the actions
   return async (dispatch: Dispatch<Action>) => {
     dispatch({
       type: ActionTypes.SEARCH_REPOSITORIES,
